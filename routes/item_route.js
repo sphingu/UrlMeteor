@@ -1,6 +1,6 @@
-Router.route('items', function () {
-    this.render('items');
+Router.route('links', function () {
+    this.render('links');
 });
 Router.route('/', function () {
-    this.render('editItem');
+    this.render('editLink');
 });

@@ -1,10 +1,10 @@
+/* global Links */
 /* global SimpleSchema */
 /* global Mongo */
-/* global Items */
 
-Items = new Mongo.Collection("items");
+Links = new Mongo.Collection("links");
 
-Items.attachSchema(new SimpleSchema({
+Links.attachSchema(new SimpleSchema({
     name: {
         type: String,
         min: 10
@@ -15,7 +15,7 @@ Items.attachSchema(new SimpleSchema({
     }
 }));
 
-Items.allow({
+Links.allow({
     insert: function () {
         return true;
     },
@@ -28,14 +28,14 @@ Items.allow({
 });
 
 Meteor.methods({
-    addItem: function (name) {
+    addLink: function (name) {
         //TODO: validate before insert
-        var id = Items.insert({
+        var id = Links.insert({
             name: name,
             createdAt: new Date()
         });
     },
-    deleteItem: function (id) {
-        Items.remove(id);
+    deleteLink: function (id) {
+        Links.remove(id);
     }
 });

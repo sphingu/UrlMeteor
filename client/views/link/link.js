@@ -2,20 +2,20 @@
 /// <reference path="../../../typings/jquery/jquery.d.ts"/>
 /* global Template */
 
-Template.items.helpers({
+Template.links.helpers({
   items: function () {
-    return Items.find();
+    return Links.find();
   }
 });
-Template.item.events({
+Template.link.events({
   'click .delete': function () {
-    Meteor.call('deleteItem', this);
+    Meteor.call('deleteLink', this);
   }
 });
 
-Template.editItem.events({
+Template.editLink.events({
   'submit form': function (e) {
     e.preventDefault();
-    Meteor.call('addItem', $('#txtItem').val());
+    Meteor.call('addLink', $('#txtLink').val());
   }
 });

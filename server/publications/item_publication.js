@@ -1,5 +1,5 @@
 /* global Meteor */
 
-Meteor.publish('items', function () {
-    return Items.find({});
+Meteor.publish('links', function () {
+    return Links.find({});
 });
