@@ -1,0 +1,20 @@
+
+<template name="items">
+    <ul>
+        {{#each items}}
+            {{> item}}
+        {{/each}}
+    </ul>
+</template>
+
+<template name="item">
+    <li>
+        {{name}} <button class="delete">X</button>
+    </li>
+</template>
+<template name="editItem">
+    <form>
+        <input type="text" id="txtItem" placeholder="item text" />
+        <input type="submit" value="SUBMIT" />
+    </form>
+</template>
