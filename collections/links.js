@@ -1,3 +1,7 @@
+/* global SimpleSchema */
+/* global Mongo */
+/* global Items */
+
 Items = new Mongo.Collection("items");
 
 Items.attachSchema(new SimpleSchema({
@@ -12,26 +16,26 @@ Items.attachSchema(new SimpleSchema({
 }));
 
 Items.allow({
-    insert: function() {
+    insert: function () {
         return true;
     },
-    update: function() {
+    update: function () {
         return true;
     },
-    remove: function() {
+    remove: function () {
         return true;
     }
 });
 
 Meteor.methods({
-    addItem: function(name) {
-        //TODO: validate
+    addItem: function (name) {
+        //TODO: validate before insert
         var id = Items.insert({
             name: name,
             createdAt: new Date()
         });
     },
-    deleteItem: function(id) {
+    deleteItem: function (id) {
         Items.remove(id);
     }
 });
