@@ -3,7 +3,7 @@
 /* global Template */
 
 Template.links.helpers({
-  items: function () {
+  links: function () {
     return Links.find();
   }
 });
