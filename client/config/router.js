@@ -1,5 +1,5 @@
 /* global Router */
 Router.configure({
-    layoutTemplate: 'basicLayout',
+    layoutTemplate: 'layout',
     notFoundTemplate: 'notFound'
 })
