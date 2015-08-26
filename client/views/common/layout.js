@@ -3,7 +3,7 @@ Template.layout.onRendered(function () {
         insertElement: function (node, next) {
             $(node).hide().insertBefore(next)
             .delay(200)
-                .velocity('fadeIn', 1000);
+                .velocity('fadeIn', 400);
         },
         removeElement: function (node) {
             $(node).css('position','absolute').velocity({ translateX: '-1000px' }, {
