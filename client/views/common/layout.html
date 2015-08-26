@@ -3,7 +3,7 @@
         {{> header}}
     </header>
     <section id="content" class="main container-fluid">
-    {{> yield}}
+        {{#transitioner}} {{> yield}} {{/transitioner}}
     </section>
     <footer>
         {{> footer}}
