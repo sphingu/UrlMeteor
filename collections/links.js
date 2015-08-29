@@ -1,19 +1,36 @@
+/* global LinksSchema */
 /* global Links */
 /* global SimpleSchema */
 /* global Mongo */
 
 Links = new Mongo.Collection("links");
 
-Links.attachSchema(new SimpleSchema({
+LinksSchema = new SimpleSchema({
     name: {
         type: String,
-        min: 10
+        min: 3,
+        max:30,
+        trim: true,
+        regEx: /^[a-z ,.'-]+$/i
+    },
+    color:{
+        type: String,
+        optional: true
     },
     createdAt: {
-        type: Date,
+        type: Date,        
+        defaultValue: Date.now(),
         denyUpdate: true
     }
-}));
+});
+
+LinksSchema.labels({
+   name: 'Link Name',
+   color: 'Link  Color',
+   createdAt: 'Created On' 
+});
+
+Links.attachSchema(LinksSchema);
 
 Links.allow({
     insert: function () {
@@ -29,8 +46,8 @@ Links.allow({
 
 Meteor.methods({
     addLink: function (name) {
-        //TODO: validate before insert
-        var id = Links.insert({
+        console.log(name);
+         Links.insert({
             name: name,
             createdAt: new Date()
         });
