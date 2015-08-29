@@ -1,10 +1,22 @@
+/* global Links */
 /* global Fixtures */
-// fixtures using moonco:fixtures package
+/* ---------------------------------------------------- +/
 
+## Fixtures ##
 
-Fixtures.insert(Links, 'firstLink', {
-  name: 'My First Link',
-  createdAt: new Date()
-});
+Fill in the app with dummy data if database is empty.
 
-console.log(Fixtures.get(Links, 'firstLink'));
+/+ ---------------------------------------------------- */
+
+if (Links.find().count() == 0) {
+  console.log('seeding ...');
+  Fixtures.insert(Links, 'firstLink', {
+    name: 'My First Link',
+    createdAt: new Date()
+  });
+
+  console.log(Fixtures.get(Links, 'firstLink'));
+}
+else {
+  console.log('no need for seeding.')
+}
