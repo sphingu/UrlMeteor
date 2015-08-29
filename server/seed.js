@@ -12,7 +12,7 @@ if (Links.find().count() == 0) {
   console.log('seeding ...');
   Fixtures.insert(Links, 'firstLink', {
     name: 'My First Link',
-    createdAt: new Date()
+    createdAt: new Date() 
   });
 
   console.log(Fixtures.get(Links, 'firstLink'));

@@ -7,8 +7,10 @@
 meteor-platform
 aldeed:collection2
 iron:router
-less
 moonco:fixtures
 ccorcos:transitioner
 msavin:mongol
+reywood:bootstrap3-sass
+fortawesome:fontawesome
+fourseven:scss
 

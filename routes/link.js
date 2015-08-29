@@ -1,6 +1,14 @@
-Router.route('links', function () {
+Router.route('/', function() {
+    this.render('home');
+});
+
+Router.route('Links', function () {
     this.render('links');
 });
-Router.route('/', function () {
-    this.render('editLink');
+ Router.route('AddLink', function () {
+     this.render('addLink');
+ });
+
+Router.route('Home', function() {
+    this.render('home');
 });
