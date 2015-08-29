@@ -22,4 +22,36 @@ section {
     overflow:auto;
 }
 
+/* Video background css start */
+
+video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+ background: url('/images/background/bg1.jpg') no-repeat;
+  background-size: cover;
+  transition: 1s opacity;
+}
+@media screen and (max-device-width: 800px) {
+  html { background: url(/images/background/bg1.jpg) #000 no-repeat center center fixed; }
+  #bgvid { display: none; }
+}
+.stopfade {
+   opacity: .5;
+    }
+    .btn {
+        background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.1));
+        text-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+        @include transition(background-color, 0.2s, ease);
+        &:hover {
+            background-position: 0 -12px;
+            @include transition(background-position, 0.15s, linear);
+        }
+    }
+    /* Video background css end */ 
 

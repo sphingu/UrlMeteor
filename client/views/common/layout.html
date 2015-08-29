@@ -1,11 +1,30 @@
 <template name="layout">
+    <video autoplay poster="/images/leaf.jpg" id="bgvid" loop>
+        WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for
+        the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the
+        "Pause" button
+        <!--<source src="//demosthenes.info/assets/videos/polina.webm" type="video/webm">-->
+        <source src="/images/background/mg.mp4" type="video/mp4">
+    </video>
     <header>
         {{> header}}
     </header>
     <section id="content" class="main container" style="margin-top:65px">
-        {{> yield}} 
+        {{> yield}}
     </section>
     <footer>
         {{> footer}}
     </footer>
+    <script type="text/javascript">
+        //http://codepen.io/dudleystorey/pen/knqyK
+        var vid = document.getElementById("bgvid");
+        var pauseButton = document.querySelector("#polina button");
+        function vidFade() {
+            vid.classList.add("stopfade");
+        }
+        vid.addEventListener('ended', function() {
+            vid.pause();
+            vidFade();
+        });
+    </script>
 </template>
