@@ -2,8 +2,6 @@
     <div class="page-header">
         <h1>Add Link</h1>
     </div>
-    <form>
-        <input type="text" id="txtLink" placeholder="link text" />
-        <input type="submit" value="SUBMIT" />
-    </form>
+    <input type="text" placeholder="link text" data-bind="value: name" />
+    <input type="button" value="Add Link" data-bind="click: addLink" />
 </template>
