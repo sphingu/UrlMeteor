@@ -1,7 +1,8 @@
 
-Template.addLink.events({
-  'submit form': function (e) {
-    e.preventDefault();
-    Meteor.call('addLink', $('#txtLink').val());
+Template.addLink.viewmodel({
+  name: 'Test Link',
+  addLink: function () {
+    Meteor.call('addLink', this.name());
+    toastr.success('Link added successfully', 'Success');
   }
 });
