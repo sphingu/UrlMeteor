@@ -45,14 +45,10 @@ Links.allow({
 });
 
 Meteor.methods({
-    addLink: function (name) {
-        console.log(name);
-         Links.insert({
-            name: name,
-            createdAt: new Date()
-        });
+    addLink: function (link) {
+         return Links.insert(link);
     },
     deleteLink: function (id) {
-        Links.remove(id);
+        return Links.remove(id);
     }
 });
