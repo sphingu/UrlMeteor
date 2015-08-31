@@ -9,25 +9,25 @@ LinksSchema = new SimpleSchema({
     name: {
         type: String,
         min: 3,
-        max:30,
+        max: 30,
         trim: true,
         regEx: /^[a-z ,.'-]+$/i
     },
-    color:{
+    color: {
         type: String,
         optional: true
     },
     createdAt: {
-        type: Date,        
+        type: Date,
         defaultValue: Date.now(),
         denyUpdate: true
     }
 });
 
 LinksSchema.labels({
-   name: 'Link Name',
-   color: 'Link  Color',
-   createdAt: 'Created On' 
+    name: 'Link Name',
+    color: 'Link  Color',
+    createdAt: 'Created On'
 });
 
 Links.attachSchema(LinksSchema);
@@ -46,7 +46,7 @@ Links.allow({
 
 Meteor.methods({
     addLink: function (link) {
-         return Links.insert(link);
+        return Links.insert(link);
     },
     deleteLink: function (id) {
         return Links.remove(id);

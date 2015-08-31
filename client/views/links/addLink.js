@@ -2,7 +2,7 @@
 Template.addLink.viewmodel({
   name: 'Test Link',
   addLink: function () {
-    var link={
+    var link = {
       name: this.name(),
       createdAt: new Date()
     };
@@ -12,6 +12,7 @@ Template.addLink.viewmodel({
           toastr.error(err.reason, 'Error Server');
         }
         if (result) {
+          Modal.hide();
           toastr.success('Link added successfully', 'Success');
           Router.go('Links');
         }

@@ -10,6 +10,11 @@ Template.links.helpers({
     return Links.find();
   }
 });
+Template.links.events({
+  'click #btnAddLink': function () {
+    Modal.show('addLink');
+  }
+});
 Template.link.events({
   'click .delete': function () {
     Meteor.call('deleteLink', this);
