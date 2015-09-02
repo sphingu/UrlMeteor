@@ -6,8 +6,8 @@
     <table class="table table-striped table-hover">
         <thead>
             <tr>
-                <th>#</th>
-                <th>{{lblLink 'name'}}</th>
+                <th>{{lblLink 'title'}}</th>
+                <th>{{lblLink 'body'}}</th>
                 <th>{{lblLink 'createdAt'}}</th>
                 <th>Action</th>
             </tr>
@@ -20,8 +20,8 @@
 
 <template name="link">
     <tr style="background-color:{{color}}">
-        <td>1</td>
-        <td>{{name}}</td>
+        <td>{{title}}</td>
+        <td>{{body}}</td>
         <td>{{formatDate createdAt}}</td>
         <td>
             <a href="#" class="delete btn btn-primary btn-xs">Delete</a>

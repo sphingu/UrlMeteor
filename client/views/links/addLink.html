@@ -11,8 +11,28 @@
 				</div>
 
 				<div class="modal-body">
-					<input type="text" placeholder="link text" data-bind="value: name" />
-					<input type="button" value="Add Link" data-bind="click: addLink" />
+					<form class="form-horizontal" data-bind="submit: addLink">
+						<div class="form-group">
+							<label for="txtTitle" class="col-lg-3 control-label">{{lblLink 'title'}}</label>
+							<div class="col-lg-9">
+								<input class="form-control" id="txtTitle" placeholder="{{lblLink 'title'}}" type="text" data-bind="value: title">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="txtBody" class="col-lg-3 control-label">{{lblLink 'body'}}</label>
+							<div class="col-lg-9">
+								<textarea class="form-control" id="txtBody" cols="30" rows="10" placeholder="{{lblLink 'body'}}" data-bind="value: body"></textarea>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="txtColor" class="col-lg-3 control-label">{{lblLink 'color'}}</label>
+							<div class="col-lg-9">
+								<input class="form-control" id="ttxtColorxtTitle" placeholder="{{lblLink 'color'}}" type="color" data-bind="value: color">
+							</div>
+						</div>
+						<button type="submit" class="btn btn-primary" data-bind="click: addLink">Add Link</button>
+					</form>
 				</div>
 
 				<div class="modal-footer">

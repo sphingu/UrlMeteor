@@ -1,9 +1,13 @@
 
 Template.addLink.viewmodel({
-  name: 'Test Link',
+  title: '',
+  body: '',
+  color: '',
   addLink: function () {
     var link = {
-      name: this.name(),
+      title: this.title(),
+      body: this.body(),
+      color: this.color(),
       createdAt: new Date()
     };
     if (LinksSchema.namedContext("lContext").validate(link)) {

@@ -6,12 +6,17 @@
 Links = new Mongo.Collection("links");
 
 LinksSchema = new SimpleSchema({
-    name: {
+    title: {
         type: String,
         min: 3,
         max: 30,
         trim: true,
         regEx: /^[a-z ,.'-]+$/i
+    },
+    body: {
+        type: String,
+        min: 10,
+        trim: true
     },
     color: {
         type: String,
@@ -25,7 +30,8 @@ LinksSchema = new SimpleSchema({
 });
 
 LinksSchema.labels({
-    name: 'Link Name',
+    title: 'Link title',
+    body: 'Link body',
     color: 'Link  Color',
     createdAt: 'Created On'
 });
