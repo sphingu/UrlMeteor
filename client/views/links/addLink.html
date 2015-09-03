@@ -26,6 +26,12 @@
 							</div>
 						</div>
 						<div class="form-group">
+							<label for="txtTags" class="col-lg-3 control-label">{{lblLink 'tags'}}</label>
+							<div class="col-lg-9">
+								<select class="form-control" multiple id="txtTags" data-bind="value: tags"></select>
+							</div>
+						</div>
+						<div class="form-group">
 							<label for="txtColor" class="col-lg-3 control-label">{{lblLink 'color'}}</label>
 							<div class="col-lg-9">
 								<input class="form-control" id="ttxtColorxtTitle" placeholder="{{lblLink 'color'}}" type="color" data-bind="value: color">
@@ -43,3 +49,4 @@
 		</div>
 	</div>
 </template>
+

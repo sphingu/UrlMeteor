@@ -22,6 +22,9 @@ LinksSchema = new SimpleSchema({
         type: String,
         optional: true
     },
+    tags:{
+        type: [String]
+    },
     createdAt: {
         type: Date,
         defaultValue: Date.now(),
@@ -33,6 +36,7 @@ LinksSchema.labels({
     title: 'Link title',
     body: 'Link body',
     color: 'Link  Color',
+    tags: 'Link Tags',
     createdAt: 'Created On'
 });
 

@@ -55,3 +55,9 @@ video {
     }
     /* Video background css end */ 
 
+/* Boostrap input hack start */
+div.bootstrap-tagsinput{
+    border-radius: 0;
+    width:100%;
+}
+/* Boostrap input hack end */

@@ -2,11 +2,13 @@
 Template.addLink.viewmodel({
   title: '',
   body: '',
+  tags: [],
   color: '',
   addLink: function () {
     var link = {
       title: this.title(),
       body: this.body(),
+      tags: this.tags().array(),
       color: this.color(),
       createdAt: new Date()
     };
@@ -22,5 +24,9 @@ Template.addLink.viewmodel({
         }
       });
     }
+    return false;
   }
 });
+Template.addLink.rendered =function(){
+  $("#txtTags").tagsinput();
+}
