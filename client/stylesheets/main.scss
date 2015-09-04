@@ -55,9 +55,16 @@ video {
     }
     /* Video background css end */ 
 
-/* Boostrap input hack start */
+/* Boostrap tags input hack start */
 div.bootstrap-tagsinput{
     border-radius: 0;
     width:100%;
 }
-/* Boostrap input hack end */
+/* Boostrap tags input hack end */
+
+/* Boostrap summernote input hack start */
+div.note-editor{
+    height:400px;
+}
+/* Boostrap summernote input hack end */
+

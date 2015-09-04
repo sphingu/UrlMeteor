@@ -10,7 +10,7 @@ iron:router
 moonco:fixtures
 ccorcos:transitioner
 msavin:mongol
-reywood:bootstrap3-sass
+# reywood:bootstrap3-sass
 fortawesome:fontawesome
 fourseven:scss
 # pcel:loading
@@ -20,3 +20,4 @@ manuel:viewmodel
 peppelg:bootstrap-3-modal
 anti:fake
 ajduke:bootstrap-tagsinput
+summernote:summernote

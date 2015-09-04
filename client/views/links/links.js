@@ -12,7 +12,7 @@ Template.links.helpers({
 });
 Template.links.events({
   'click #btnAddLink': function () {
-    Modal.show('addLink');
+    Router.go('AddLink');
   }
 });
 Template.link.events({

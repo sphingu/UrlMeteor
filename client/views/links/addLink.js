@@ -1,13 +1,15 @@
 
 Template.addLink.viewmodel({
   title: '',
-  body: '',
   tags: [],
   color: '',
+  cancel: function () {
+    Router.go('Links');
+  },
   addLink: function () {
     var link = {
       title: this.title(),
-      body: this.body(),
+      body: $('#txtBody').code(),
       tags: this.tags().array(),
       color: this.color(),
       createdAt: new Date()
@@ -18,15 +20,15 @@ Template.addLink.viewmodel({
           toastr.error(err.reason, 'Error Server');
         }
         if (result) {
-          Modal.hide();
-          toastr.success('Link added successfully', 'Success');
           Router.go('Links');
+          toastr.success('Link added successfully', 'Success');          
         }
       });
     }
     return false;
   }
 });
-Template.addLink.rendered =function(){
+Template.addLink.rendered = function () {
   $("#txtTags").tagsinput();
+  $('#txtBody').summernote();
 }
