@@ -7,10 +7,5 @@ Template.linkThumb.helpers({
   },
   isInsertRow: function (index) {
     return index !=0 && index % 3 == 0;
-  },
-  colorStyle: function () {
-    return {
-      style:  "background-color:" + this.color
-    }
   }
 });
