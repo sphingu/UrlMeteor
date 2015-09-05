@@ -4,7 +4,7 @@ html {
     height: 100%;
 }
 body {
-    background: url('/images/background/bg.jpg') no-repeat center center fixed;
+    background: url('/images/background/bg2.jpg') no-repeat center center fixed;
     //background: url(http://www.freechristmaswallpapers.net/images/wallpapers/Winter-Background-with-Frozen-Trees-1280-1024-411906.jpeg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -30,7 +30,9 @@ section.container {
     margin-right: 5px;
     vertical-align: middle;
 }
-
+.input-group-addon {
+    width:100px;
+}
 /* Video background css start */
 
 video {

@@ -32,5 +32,6 @@ Template.addLink.viewmodel({
 Template.addLink.rendered = function () {
   $("#txtTags").tagsinput();
   $('#txtBody').summernote();
-  $('.rateit').rateit()
+  $('.rateit').rateit();
+  $('.colorPicker').colorpicker({format:'hex'});
 }
