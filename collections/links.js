@@ -18,6 +18,12 @@ LinksSchema = new SimpleSchema({
         min: 10,
         trim: true
     },
+    rating: {
+        type: Number,
+        min: 0,
+        max: 5,
+        decimal: true
+    },
     color: {
         type: String,
         optional: true
@@ -35,6 +41,7 @@ LinksSchema = new SimpleSchema({
 LinksSchema.labels({
     title: 'Link title',
     body: 'Link body',
+    rating: 'Link Rating',
     color: 'Link  Color',
     tags: 'Link Tags',
     createdAt: 'Created On'

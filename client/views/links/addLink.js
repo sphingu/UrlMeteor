@@ -11,6 +11,7 @@ Template.addLink.viewmodel({
       title: this.title(),
       body: $('#txtBody').code(),
       tags: this.tags().array(),
+      rating :  $('.rateit').rateit('value'),
       color: this.color(),
       createdAt: new Date()
     };
@@ -31,4 +32,5 @@ Template.addLink.viewmodel({
 Template.addLink.rendered = function () {
   $("#txtTags").tagsinput();
   $('#txtBody').summernote();
+  $('.rateit').rateit()
 }

@@ -7,7 +7,7 @@
         <thead>
             <tr>
                 <th>{{lblLink 'title'}}</th>
-                <th>{{lblLink 'body'}}</th>
+                <th>{{lblLink 'rating'}}</th>
                 <th>{{lblLink 'createdAt'}}</th>
                 <th>Action</th>
             </tr>
@@ -21,7 +21,7 @@
 <template name="link">
     <tr style="background-color:{{color}}">
         <td>{{title}}</td>
-        <td>{{body}}</td>
+        <td>{{rating}}</td>
         <td>{{formatDate createdAt}}</td>
         <td>
             <a href="#" class="delete btn btn-primary btn-xs">Delete</a>

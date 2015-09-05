@@ -1,7 +1,7 @@
 <template name="addLink">
-	   <div class="page-header">
-        <h1>Add Link</h1>
-    </div>
+	<div class="page-header">
+		<h1>Add Link</h1>
+	</div>
 	<form class="form-horizontal" data-bind="submit: addLink">
 		<div class="form-group">
 			<label for="txtTitle" class="col-lg-3 control-label">{{lblLink 'title'}}</label>
@@ -29,11 +29,15 @@
 			</div>
 		</div>
 		<div class="form-group">
-			<div class="col-lg-offset-3 col-lg-9">
-		<button type="submit" class="btn btn-primary" data-bind="click: addLink">Add Link</button>
-		<button type="reset" class="btn btn-default" data-bind="click: cancel">Cancel</button>		
-			</div>	
+			<div class="col-lg-9 col-lg-offset-3">
+				<div class="rateit"></div>
+			</div>
 		</div>
-		
+		<div class="form-group">
+			<div class="col-lg-offset-3 col-lg-9">
+				<button type="submit" class="btn btn-primary" data-bind="click: addLink">Add Link</button>
+				<button type="reset" class="btn btn-default" data-bind="click: cancel">Cancel</button>
+			</div>
+		</div>
 	</form>
 </template>
