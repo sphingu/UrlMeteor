@@ -2,42 +2,17 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             <h3 class="panel-title">Links</h3>
-            <a href="{{pathFor 'AddLink'}}" class="btn btn-primary" style="float:right;margin-top:-12px;">
-                <span class="glyphicon glyphicon-plus"></span></a>
+            <div style="float:right;margin-top:-12px;">
+                <a href="{{pathFor 'AddLink'}}" class="btn btn-primary" title="Add link">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </a>
+                <a href="#" id="btnChangeView" class="btn btn-default" title="Change view">
+                    <span class="glyphicon {{viewTypeIcon}}"></span>
+                </a>
+            </div>
         </div>
         <div class="panel-body">
-            <table class="table table-striped table-hover">
-                <thead>
-                    <tr>
-                        <th>{{lblLink 'title'}}</th>
-                        <th>{{lblLink 'rating'}}</th>
-                        <th>{{lblLink 'createdAt'}}</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{#each links}} 
-                        {{> link}}
-                    {{else}}
-                    <tr>
-                        <td colspan="4"><h3 class="text-center">Add your awesome links here</h3></td>
-                    </tr>
-                                                 
-                    {{/each}}
-                </tbody>
-            </table>
+            {{> Template.dynamic template=listViewType data=links}}
         </div>
     </div>
-
-</template>
-
-<template name="link">
-    <tr style="background-color:{{setColorAlpha color}}">
-        <td>{{title}}</td>
-        <td>{{rating}}</td>
-        <td>{{formatDate createdAt}}</td>
-        <td>
-            <a href="#" class="delete btn btn-primary btn-xs">Delete</a>
-        </td>
-    </tr>
 </template>

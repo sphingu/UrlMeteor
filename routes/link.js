@@ -6,11 +6,6 @@ Router.route('Links', function () {
     this.render('links');
 });
 
-
-Router.route('LinkThumb', function () {
-    this.render('linkThumb');
-});
-
 Router.route('AddLink', function () {
     this.render('addLink');
 });
