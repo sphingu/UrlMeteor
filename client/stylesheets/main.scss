@@ -14,12 +14,16 @@ body {
 body nav.navbar {
     @include main-section($gray-base);
 }
-section {
+section.container {
     @include main-section($gray-lighter);
     border:none;
+    padding:0;
 }
 #Mongol{
     overflow:auto;
+}
+.panel{
+    margin:0;
 }
 
 /* Video background css start */

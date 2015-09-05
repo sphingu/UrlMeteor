@@ -10,7 +10,6 @@ iron:router
 moonco:fixtures
 ccorcos:transitioner
 msavin:mongol
-# reywood:bootstrap3-sass
 fortawesome:fontawesome
 fourseven:scss
 # pcel:loading
@@ -22,3 +21,4 @@ anti:fake
 ajduke:bootstrap-tagsinput
 summernote:summernote
 dandv:jquery-rateit
+reywood:bootstrap3-sass
