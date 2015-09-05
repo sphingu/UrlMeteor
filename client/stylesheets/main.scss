@@ -4,7 +4,7 @@ html {
     height: 100%;
 }
 body {
-    background: url('/images/background/bg1.jpg') no-repeat center center fixed;
+    background: url('/images/background/bg.jpg') no-repeat center center fixed;
     //background: url(http://www.freechristmaswallpapers.net/images/wallpapers/Winter-Background-with-Frozen-Trees-1280-1024-411906.jpeg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -72,7 +72,7 @@ div.bootstrap-tagsinput{
 /* Boostrap tags input hack end */
 
 /* Boostrap summernote input hack start */
-div.note-editor{
+div.note-editable{
     height:400px;
 }
 /* Boostrap summernote input hack end */

@@ -1,48 +1,51 @@
 <template name="addLink">
-	  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">Add Link</h3>
-    </div>
-    <div class="panel-body">
-      <form class="form-horizontal" data-bind="submit: addLink">
-		<div class="form-group">
-			<label for="txtTitle" class="col-lg-3 control-label">{{lblLink 'title'}}</label>
-			<div class="col-lg-9">
-				<input class="form-control" id="txtTitle" placeholder="{{lblLink 'title'}}" type="text" data-bind="value: title">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Add Link</h3>
+			<div style="float:right; margin-top:-12px;">
+			<button type="submit" class="btn btn-primary" data-bind="click: addLink"><span class="glyphicon glyphicon-ok"></span></button>
+			<button type="reset" class="btn btn-default" data-bind="click: cancel"><span class="glyphicon glyphicon-remove"></span></button>
 			</div>
 		</div>
+		<div class="panel-body">
+			<form class="form-horizontal" data-bind="submit: addLink">
+				<div class="form-group">
+					<label for="txtTitle" class="col-lg-3 control-label">{{lblLink 'title'}}</label>
+					<div class="col-lg-9">
+						<input class="form-control" id="txtTitle" placeholder="{{lblLink 'title'}}" type="text" data-bind="value: title">
+					</div>
+				</div>
 
-		<div class="form-group">
-			<label for="txtBody" class="col-lg-3 control-label">{{lblLink 'body'}}</label>
-			<div class="col-lg-9">
-				<textarea class="form-control" id="txtBody" cols="30" style="height:500px;" rows="10" placeholder="{{lblLink 'body'}}"></textarea>
-			</div>
+				<div class="form-group">
+					<label for="txtBody" class="col-lg-3 control-label">{{lblLink 'body'}}</label>
+					<div class="col-lg-9">
+						<textarea class="form-control" id="txtBody" cols="30" style="height:500px;" rows="10" placeholder="{{lblLink 'body'}}"></textarea>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="txtTags" class="col-lg-3 control-label">{{lblLink 'tags'}}</label>
+					<div class="col-lg-9">
+						<select class="form-control" multiple id="txtTags" data-bind="value: tags"></select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="txtColor" class="col-lg-3 control-label">{{lblLink 'color'}}</label>
+					<div class="col-lg-9">
+						<input class="form-control" id="ttxtColorxtTitle" placeholder="{{lblLink 'color'}}" type="color" data-bind="value: color">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-lg-9 col-lg-offset-3">
+						<div class="rateit"></div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-lg-offset-3 col-lg-9">
+						<button type="submit" class="btn btn-primary" data-bind="click: addLink"><span class="glyphicon glyphicon-ok"></span></button>
+						<button type="reset" class="btn btn-default" data-bind="click: cancel"><span class="glyphicon glyphicon-remove"></span></button>
+					</div>
+				</div>
+			</form>
 		</div>
-		<div class="form-group">
-			<label for="txtTags" class="col-lg-3 control-label">{{lblLink 'tags'}}</label>
-			<div class="col-lg-9">
-				<select class="form-control" multiple id="txtTags" data-bind="value: tags"></select>
-			</div>
-		</div>
-		<div class="form-group">
-			<label for="txtColor" class="col-lg-3 control-label">{{lblLink 'color'}}</label>
-			<div class="col-lg-9">
-				<input class="form-control" id="ttxtColorxtTitle" placeholder="{{lblLink 'color'}}" type="color" data-bind="value: color">
-			</div>
-		</div>
-		<div class="form-group">
-			<div class="col-lg-9 col-lg-offset-3">
-				<div class="rateit"></div>
-			</div>
-		</div>
-		<div class="form-group">
-			<div class="col-lg-offset-3 col-lg-9">
-				<button type="submit" class="btn btn-primary" data-bind="click: addLink">Add Link</button>
-				<button type="reset" class="btn btn-default" data-bind="click: cancel">Cancel</button>
-			</div>
-		</div>
-	</form>
-    </div>
-  </div>
-	
+	</div>
 </template>
