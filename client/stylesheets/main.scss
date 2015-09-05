@@ -24,6 +24,11 @@ section.container {
 }
 .panel{
     margin:0;
+    background-color: transparent;
+}
+.thumbnail .glyphicon{
+    margin-right: 5px;
+    vertical-align: middle;
 }
 
 /* Video background css start */

@@ -1,0 +1,26 @@
+<template name="linkThumb">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Links</h3>
+		</div>
+		<div class="panel-body">
+			<div class="row">
+				{{#each links}} 
+				<!--{{#if isInsertRow index}}
+			</div>
+			<div class="row">
+				{{/if}}-->
+				<div class="col-md-4">
+					<div class="thumbnail" {{colorStyle}}>
+						<div class="caption">
+							<h3>{{title}}</h3>
+							<p><span class="glyphicon glyphicon-tag"></span>{{{displayTags tags}}}</p>
+							<p><span class="glyphicon glyphicon-time"></span>{{formatDate createdAt}}</p>
+						</div>
+					</div>
+				</div>
+				{{/each}}
+			</div>
+		</div>
+	</div>
+</template>
