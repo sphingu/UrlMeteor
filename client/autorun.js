@@ -6,6 +6,6 @@ Tracker.autorun(function () {
 			$('.navbar-nav').first().find('li a[href="' + current.url + '"]').parent().addClass('active');
 		}
 		window.scrollTo(0,0);
-		//$('.dropdown-toggle').dropdown();
+		$('.dropdown-toggle').dropdown();
 	});
 });

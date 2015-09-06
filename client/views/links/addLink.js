@@ -7,7 +7,6 @@ Template.addLink.viewmodel({
     Router.go('Links');
   },
   addLink: function () {
-    console.log(this.color());
     var link = {
       title: this.title(),
       body: $('#txtBody').code(),

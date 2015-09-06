@@ -8,7 +8,6 @@ Router.map(function () {
         }
     });
     this.route('AddLink');
-    this.route('Home');
     this.route('accessDenied');
     
 });
