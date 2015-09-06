@@ -18,7 +18,7 @@ UI.registerHelper("lblLink", function (key) {
 UI.registerHelper("displayTags", function (tags) {
     var tagString = "";
     _.each(tags, function (object, index) {
-        tagString += "<span class='label label-default'>" + object + "</span>";
+        tagString += "<span class='label label-primary'>" + object + "</span>";
     });
     return tagString;
 });

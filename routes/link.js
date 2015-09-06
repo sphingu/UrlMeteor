@@ -1,15 +1,29 @@
-Router.route('/', function() {
-    this.render('home');
+Router.map(function () {
+    this.route('home', {
+        path: '/'
+    });
+    this.route('Links',{
+        waitOn: function () {
+            return Meteor.subscribe('links');
+        }
+    });
+    this.route('AddLink');
+    this.route('Home');
+    this.route('accessDenied');
+    
 });
 
-Router.route('Links', function () {
-    this.render('links');
-});
-
-Router.route('AddLink', function () {
-    this.render('addLink');
-});
-
-Router.route('Home', function() {
-    this.render('home');
+Router.plugin('auth', {
+  except: [
+    'enroll',
+    'forgotPassword',
+    'home',
+    'login',
+    'resetPassword',
+    'signup',
+    'verifyEmail'
+  ],
+  authenticate: {
+    template: 'accessDenied'
+  }
 });
