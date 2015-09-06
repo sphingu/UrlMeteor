@@ -21,7 +21,7 @@ anti:fake
 ajduke:bootstrap-tagsinput
 summernote:summernote
 dandv:jquery-rateit
-risul:bootstrap-colorpicker
+# risul:bootstrap-colorpicker
 aramk:tinycolor
 accounts-github
 ian:accounts-ui-bootstrap-3

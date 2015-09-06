@@ -7,6 +7,7 @@ Template.addLink.viewmodel({
     Router.go('Links');
   },
   addLink: function () {
+    console.log(this.color());
     var link = {
       title: this.title(),
       body: $('#txtBody').code(),
@@ -33,5 +34,5 @@ Template.addLink.rendered = function () {
   $("#txtTags").tagsinput();
   $('#txtBody').summernote();
   $('.rateit').rateit();
-  $('.colorPicker').colorpicker({format:'hex'});
+  //$('.colorPicker').colorpicker({format:'hex'});
 }
