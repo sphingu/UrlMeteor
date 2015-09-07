@@ -27,3 +27,5 @@ accounts-github
 ian:accounts-ui-bootstrap-3
 zimme:iron-router-auth
 reywood:bootstrap3-sass
+hitchcott:app-dump
+service-configuration

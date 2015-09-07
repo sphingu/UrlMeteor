@@ -25,5 +25,6 @@ UI.registerHelper("displayTags", function (tags) {
 
 UI.registerHelper('setColorAlpha', function (hexColor) {
     var color = tinycolor(hexColor || "#fff");
-    return color.setAlpha(.5);
+    var alphacolor = color.setAlpha(.5);
+    return 'background-color : ' + alphacolor + ';border:1px solid ' + hexColor;
 });

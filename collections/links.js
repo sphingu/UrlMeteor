@@ -28,13 +28,19 @@ LinksSchema = new SimpleSchema({
         type: String,
         optional: true
     },
-    tags:{
+    tags: {
         type: [String]
     },
     createdAt: {
         type: Date,
-        defaultValue: Date.now(),
-        denyUpdate: true
+        defaultValue: new Date(),
+        denyUpdate: true,
+        optional: true
+    },
+    createdBy: {
+        type: String,
+        autoValue: function () { return Meteor.userId() },
+        optional: true
     }
 });
 
@@ -50,22 +56,13 @@ LinksSchema.labels({
 Links.attachSchema(LinksSchema);
 
 Links.allow({
-    insert: function () {
-        return true;
+    insert: function (userId, link) {
+        return userId && link && userId === link.createdBy;
     },
-    update: function () {
-        return true;
+    update: function (userId, link) {
+        return userId && link && userId === link.createdBy;;
     },
-    remove: function () {
-        return true;
-    }
-});
-
-Meteor.methods({
-    addLink: function (link) {
-        return Links.insert(link);
-    },
-    deleteLink: function (id) {
-        return Links.remove(id);
+    remove: function (userId, link) {
+        return userId && link && userId === link.createdBy;
     }
 });

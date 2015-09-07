@@ -12,11 +12,10 @@ Template.addLink.viewmodel({
       body: $('#txtBody').code(),
       tags: this.tags().array(),
       rating :  $('.rateit').rateit('value'),
-      color: this.color(),
-      createdAt: new Date()
+      color: this.color()
     };
     if (LinksSchema.namedContext("lContext").validate(link)) {
-      Meteor.call('addLink', link, function (err, result) {
+      Links.insert(link,function (err, result) {
         if (err) {
           toastr.error(err.reason, 'Error Server');
         }

@@ -2,12 +2,14 @@
 	<div class="row">
 		{{#each this}}
 		<div class="col-md-4">
-			<div class="thumbnail" style="background-color:{{setColorAlpha color}}">
+			<div class="thumbnail" style="{{setColorAlpha color}}">
 				<div class="caption">
-					<h3>{{index}}{{title}}</h3>
+					<h3 style="margin-top:0">{{index}}{{title}}</h3>
 					<p><span class="glyphicon glyphicon-tag"></span>{{{displayTags tags}}}</p>
 					<p><span class="glyphicon glyphicon-time"></span>{{formatDate createdAt}}</p>
-					<p><div class="rateit" data-rateit-value="{{rating}}" data-rateit-ispreset="true" data-rateit-readonly="true"></div></p>
+					<p style="margin:0">
+						<div class="rateit" data-rateit-value="{{rating}}" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
+					</p>
 				</div>
 			</div>
 		</div>

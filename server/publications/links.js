@@ -8,5 +8,9 @@ All publications-related code.
 /* global Meteor */
 
 Meteor.publish('links', function () {
-    return Links.find({});
+  if (this.userId) {
+    return Links.find({ createdBy: this.userId });
+  } else {
+    this.ready();
+  }
 });
