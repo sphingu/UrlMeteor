@@ -29,3 +29,4 @@ zimme:iron-router-auth
 reywood:bootstrap3-sass
 hitchcott:app-dump
 service-configuration
+dburles:collection-helpers

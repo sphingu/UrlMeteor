@@ -1,0 +1,19 @@
+<template name="linkDetail">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{title}}</h3>
+      <div style="float:right; margin-top:-12px;">
+				<a  class="btn btn-primary" href="{{pathFor 'Links'}}" ><span class="glyphicon glyphicon-circle-arrow-left"></span></a>
+			</div>
+    </div>
+    <div class="panel-body">
+      <p>
+        <span class="glyphicon glyphicon-time"></span> {{formatDate createdAt}}
+      </p>
+      <div class="rateit" data-rateit-value="{{rating}}" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
+      <p>
+        {{{body}}}
+      </p>
+    </div>
+  </div>
+</template>

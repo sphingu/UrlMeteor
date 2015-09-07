@@ -54,7 +54,11 @@ LinksSchema.labels({
 });
 
 Links.attachSchema(LinksSchema);
-
+Links.helpers({
+    detailPath: function () {
+        return '/link/' + this._id;
+    }
+});
 Links.allow({
     insert: function (userId, link) {
         return userId && link && userId === link.createdBy;
