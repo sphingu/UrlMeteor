@@ -5,18 +5,16 @@ Template.links.helpers({
       return link;
     });
   },
-  listViewType: function () {
+  viewTypeTemplate: function () {
     return Session.get('isThumbView') ? 'linkThumbList' : 'linkList';
   },
   viewTypeIcon: function () {
     return Session.get('isThumbView') ? 'glyphicon-th-list' : 'glyphicon-th-large';
   }
 });
-Template.links.events({
-  'click #btnAddLink': function () {
-    Router.go('AddLink');
-  },
-  'click #btnChangeView': function () {
+
+Template.links.viewmodel({
+  changeView: function () {
     Session.set('isThumbView', !Session.get('isThumbView'));
   }
 });

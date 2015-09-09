@@ -6,13 +6,13 @@
                 <a href="{{pathFor 'AddLink'}}" class="btn btn-primary" title="Add link">
                     <span class="glyphicon glyphicon-plus"></span>
                 </a>
-                <a href="#" id="btnChangeView" class="btn btn-default" title="Change view">
+                <a href="#" class="btn btn-default" data-bind="click: changeView" title="Change view">
                     <span class="glyphicon {{viewTypeIcon}}"></span>
                 </a>
             </div>
         </div>
         <div class="panel-body">
-            {{> Template.dynamic template=listViewType data=links}}
+            {{> Template.dynamic template = viewTypeTemplate data=links}}
         </div>
     </div>
 </template>

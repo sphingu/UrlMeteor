@@ -34,6 +34,10 @@ section.container {
     margin-right: 5px;
     vertical-align: middle;
 }
+tbody tr, .thumbnail:hover{
+    cursor: pointer;
+    border:none;
+}
 .input-group-addon {
     width:100px;
 }
