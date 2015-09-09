@@ -1,10 +1,8 @@
-
-Template.linkThumbList.rendered = function () {
-	$('.rateit').rateit();
-};
-
-Template.linkThumbList.events({
-	'click .thumbnail': function (e,t) {
-		Router.go(this.detailPath());
+Template.linkThumb.viewmodel(function (data) {
+	return {
+		link: data,
+		viewDetail: function () {
+			Router.go(this.link().detailPath());
+		}
 	}
 });

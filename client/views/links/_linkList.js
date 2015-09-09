@@ -1,9 +1,13 @@
-Template.linkList.events({
-  'click .delete': function () {
-    Links.remove(this._id);
-    toastr.success("link deleted successfully", "Success Delete");
-  },
-  'click tbody tr': function (e, t) {
-    Router.go(this.detailPath());
+
+Template.link.viewmodel(function (data) {
+  return {
+    link: data,
+    removeLink: function () {
+      Links.remove(this.link()._id);
+      toastr.success("link deleted successfully", "Success Delete");
+    },
+    viewDetail: function () {
+      Router.go(this.link().detailPath());
+    }
   }
 });

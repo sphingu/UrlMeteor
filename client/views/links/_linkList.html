@@ -10,16 +10,7 @@
             </tr>
         </thead>
         <tbody>
-            {{#each this}}
-            <tr style="{{setColorAlpha color}}">
-                <td>{{title}}</td>
-                <td>{{rating}}</td>
-                <td>{{formatDate createdAt}}</td>
-                <td>
-                    <a href="#" class="delete btn btn-primary btn-xs" title="Delete link">Delete</a>
-                </td>
-            </tr>
-            {{else}}
+            {{#each this}} {{> link}} {{else}}
             <tr>
                 <td colspan="4">
                     <h3 class="text-center">Add your awesome links here</h3>
@@ -28,4 +19,14 @@
             {{/each}}
         </tbody>
     </table>
+</template>
+<template name="link">
+    <tr style="{{setColorAlpha color}}" data-bind="click: viewDetail">
+        <td>{{title}}</td>
+        <td>{{rating}}</td>
+        <td>{{formatDate createdAt}}</td>
+        <td>
+            <a href="#" class="delete btn btn-primary btn-xs" data-bind="click: removeLink" title="Delete link">Delete</a>
+        </td>
+    </tr>
 </template>
