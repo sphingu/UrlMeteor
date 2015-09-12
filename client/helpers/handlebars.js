@@ -3,6 +3,15 @@ var DateFormats = {
     long: "dddd DD.MM.YYYY HH:mm"
 };
 
+UI.registerHelper('limitText', function (context, options) {
+    if (context && context.length > 40) {
+        return context.substring(0, 40) + "...";
+    }
+    else {
+        return context;
+    }
+})
+
 UI.registerHelper("formatDate", function (context, options) {
     if (moment && context) {
         return moment(context).fromNow();

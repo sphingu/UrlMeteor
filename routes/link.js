@@ -9,10 +9,10 @@ Router.map(function () {
     template: 'editLink',
     data: function () {
       var link = {
-        title: 'my title',
-        body: 'my body',
-        tags: ['mytags', 'mytags1'],
-        color: '#232323',
+        title: '',
+        body: '',
+        tags: [],
+        color: '#8000ff',
         rating: 5
       }
       return link;
@@ -33,7 +33,6 @@ Router.map(function () {
     waitOn: subscribeLinkOnwait,
     notFoundTemplate: 'home',
     data: function () {
-      debugger;
       return Links.findOne({ _id: this.params.id });
     }
   });

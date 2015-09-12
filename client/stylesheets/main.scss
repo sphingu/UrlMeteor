@@ -4,12 +4,12 @@ html {
     height: 100%;
 }
 body {
-    background: url('/images/background/one.png');
+    background: url('/images/background/bg.jpg') no-repeat center center fixed;
     //background: url(http://www.freechristmaswallpapers.net/images/wallpapers/Winter-Background-with-Frozen-Trees-1280-1024-411906.jpeg) no-repeat center center fixed;
-    // -webkit-background-size: cover;
-    // -moz-background-size: cover;
-    // -o-background-size: cover;
-    // background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 body nav.navbar {
     @include main-section($gray-base);
@@ -40,6 +40,14 @@ tbody tr, .thumbnail:hover{
 }
 .input-group-addon {
     width:100px;
+}
+.panel-heading{
+    background:rgba(255,255,255,0.4) !important;
+}
+.panel-title{
+    font-size: x-large;
+    font-weight: 400;
+    text-transform: uppercase;
 }
 /* Video background css start */
 
