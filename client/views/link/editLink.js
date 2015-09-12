@@ -14,7 +14,7 @@ Template.editLink.viewmodel(function (data) {
       var link = {
         title: this.title(),
         body: $('#txtBody').code(),
-        tags: this.tags().array(),
+        tags: $('#txtTags').val(),
         color: this.color(),
         rating: this.rating()
       };
@@ -24,14 +24,17 @@ Template.editLink.viewmodel(function (data) {
         }
         else {
           link._id = Session.get('linkId');
-          Links.update(link._id, { $set: { title: link.title, body: link.body, tags: link.tags, color: link.color } },
+          Links.update(link._id, {$pullAll: {tags:  this.tags().array()}});
+          Links.update(link._id, {$addToSet: {tags: {$each: link.tags}}});
+          Links.update(link._id, { 
+            $set: { title: link.title, body: link.body, color: link.color } },
             showSaveLinkMessage);
-        }
+         }
       }
       return false;
     }
   };
-});
+},'tags');
 
 function showSaveLinkMessage(err, result) {
   if (err) {

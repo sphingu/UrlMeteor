@@ -25,7 +25,11 @@
 				<div class="form-group">
 					<label for="txtTags" class="col-lg-3 control-label">{{lblLink 'tags'}}</label>
 					<div class="col-lg-9">
-						<select class="form-control" multiple id="txtTags" data-bind='options: tags, value: tags'></select>
+						<select class="form-control" multiple id="txtTags">
+							{{#each tags}}
+                				<option selected="selected" value="{{this}}">{{this}}</option>
+							{{/each}}
+						</select>
 					</div>
 				</div>
 				<div class="form-group">
