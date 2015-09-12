@@ -9,7 +9,6 @@ LinksSchema = new SimpleSchema({
     title: {
         type: String,
         min: 3,
-        max: 30,
         trim: true,
         regEx: /^[a-z ,.'-]+$/i
     },
@@ -57,6 +56,9 @@ Links.attachSchema(LinksSchema);
 Links.helpers({
     detailPath: function () {
         return '/link/' + this._id;
+    },
+    editPath: function () {
+        return '/editLink/' + this._id;
     }
 });
 Links.allow({

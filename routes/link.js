@@ -3,31 +3,51 @@ Router.map(function () {
     path: '/'
   });
   this.route('Links', {
-    waitOn: function () {
-      return [
-        Meteor.subscribe('links')
-      ];
+    waitOn: subscribeLinkOnwait
+  });
+  this.route('AddLink', {
+    template: 'editLink',
+    data: function () {
+      var link = {
+        title: 'my title',
+        body: 'my body',
+        tags: ['mytags', 'mytags1'],
+        color: '#232323',
+        rating: 5
+      }
+      return link;
     }
   });
-  this.route('AddLink');
+
+  this.route('EditLink', {
+    template: 'editLink',
+    path: '/EditLink/:id',
+    waitOn: subscribeLinkOnwait,
+    notFoundTemplate: 'home',
+    data: function () {
+      return Links.findOne({ _id: this.params.id });
+    }
+  });
+  this.route('LinkDetail', {
+    path: '/link/:id',
+    waitOn: subscribeLinkOnwait,
+    notFoundTemplate: 'home',
+    data: function () {
+      debugger;
+      return Links.findOne({ _id: this.params.id });
+    }
+  });
+
   this.route('AccessDenied');
   this.route('Backup');
-  this.route('LinkDetail', {
-    path: '/link/:_id',waitOn: function () {
-      return [
-        Meteor.subscribe('links')
-      ];
-    },
-     notFoundTemplate: 'home',
-    data: function () {
-      _id = this.params._id;
-      templateData = Links.findOne({ _id: this.params._id });
-      return templateData;
-    }
-  });
+
 
 });
-
+function subscribeLinkOnwait() {
+  return [
+    Meteor.subscribe('links')
+  ];
+}
 Router.plugin('auth', {
   except: [
     'enroll',
