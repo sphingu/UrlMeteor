@@ -7,7 +7,6 @@ Template.editLink.viewmodel(function (data) {
     tags: data.tags,
     rating: data.rating,
     color: data.color,
-    createdBy: data.createdBy,
     cancel: function () {
       Router.go('Links');
     },
@@ -17,8 +16,7 @@ Template.editLink.viewmodel(function (data) {
         body: $('#txtBody').code(),
         tags: this.tags().array(),
         color: this.color(),
-        rating: this.rating(),
-        createdBy: this.createdBy()
+        rating: this.rating()
       };
       if (LinksSchema.namedContext("lContext").validate(link)) {
         if (!Session.get('linkId')) {

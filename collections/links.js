@@ -30,17 +30,9 @@ LinksSchema = new SimpleSchema({
     tags: {
         type: [String]
     },
-    createdAt: {
-        type: Date,
-        defaultValue: new Date(),
-        denyUpdate: true,
-        optional: true
-    },
-    createdBy: {
-        type: String,
-        autoValue: function () { return Meteor.userId() },
-        optional: true
-    }
+    createdAt: Schemas.createdAt,
+    updatedAt: Schemas.updatedAt,
+    createdBy: Schemas.createdBy
 });
 
 LinksSchema.labels({
@@ -49,7 +41,8 @@ LinksSchema.labels({
     rating: 'Link Rating',
     color: 'Link  Color',
     tags: 'Link Tags',
-    createdAt: 'Created On'
+    createdAt: 'Created On',
+    updatedAt: 'Updated On'
 });
 
 Links.attachSchema(LinksSchema);
