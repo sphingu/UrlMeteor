@@ -1,0 +1,84 @@
+<template name="search">
+	{{#if isUser}}
+	<div id="morphsearch" class="morphsearch">
+		<form class="morphsearch-form">
+			{{> esInput index="links" placeholder="Search..." class="morphsearch-input" }}
+			<button class="morphsearch-submit" type="submit">Search</button>
+		</form>
+		<div class="morphsearch-content">
+			{{#esEach index="links"}}
+			<div class="col-md-4">
+				<div class="thumbnail" style="{{setColorAlpha color}}">
+					<div class="caption">
+						<h4 style="margin-top:0;font-weight:bold;" title="{{title}}">{{limitText title}}</h4>
+						<p><span class="glyphicon glyphicon-tag"></span>{{{displayTags tags}}}</p>
+						<p><span class="glyphicon glyphicon-time"></span>{{formatDate createdAt}}</p>
+					</div>
+				</div>
+			</div>
+			{{/esEach}} {{> esLoadMoreButton index="links"}} {{#ifEsHasNoResults index="links"}}
+			<div class="no-results">No results found!</div>
+			{{/ifEsHasNoResults}} {{#ifEsIsSearching index="links"}}
+			<div>Loading...</div>
+			{{/ifEsIsSearching}}
+		</div>
+		<!-- /morphsearch-content -->
+		<span class="morphsearch-close"></span>
+	</div>
+	<!-- /morphsearch -->
+	<div class="overlay"></div>
+	{{/if}}
+	<script>
+		(function () {
+				var morphSearch = document.getElementById('morphsearch'),
+		input = morphSearch.querySelector('input.morphsearch-input'),
+		ctrlClose = morphSearch.querySelector('span.morphsearch-close'),
+		isOpen = isAnimating = false,
+		// show/hide search area
+		toggleSearch = function (evt) {
+			// return if open and the input gets focused
+			if (evt.type.toLowerCase() === 'focus' && isOpen) return false;
+
+			var offsets = morphsearch.getBoundingClientRect();
+			if (isOpen) {
+				classie.remove(morphSearch, 'open');
+
+				// trick to hide input text once the search overlay closes 
+				// todo: hardcoded times, should be done after transition ends
+				if (input.value !== '') {
+					setTimeout(function () {
+						classie.add(morphSearch, 'hideInput');
+						setTimeout(function () {
+							classie.remove(morphSearch, 'hideInput');
+							input.value = '';
+						}, 300);
+					}, 500);
+				}
+
+				input.blur();
+			}
+			else {
+				classie.add(morphSearch, 'open');
+			}
+			isOpen = !isOpen;
+		};
+
+				// events
+				input.addEventListener('focus', toggleSearch);
+				ctrlClose.addEventListener('click', toggleSearch);
+				// esc key closes search overlay
+				// keyboard navigation events
+				document.addEventListener('keydown', function (ev) {
+		var keyCode = ev.keyCode || ev.which;
+		if (keyCode === 27 && isOpen) {
+			toggleSearch(ev);
+		}
+				});
+
+
+				/***** for demo purposes only: don't allow to submit the form *****/
+				morphSearch.querySelector('button[type="submit"]').addEventListener('click', function (ev) { ev.preventDefault(); });
+})();
+	</script>
+
+</template>

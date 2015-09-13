@@ -1,5 +1,5 @@
 Router.map(function () {
-  this.route('home', {
+  this.route('Search', {
     path: '/'
   });
   this.route('Links', {

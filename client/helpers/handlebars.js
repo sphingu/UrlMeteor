@@ -3,13 +3,22 @@ var DateFormats = {
     long: "dddd DD.MM.YYYY HH:mm"
 };
 
+UI.registerHelper('log',function(context,options){
+   if(context){
+       return JSON.stringify(context);
+   } 
+   return context;
+});
+
+UI.registerHelper('isUser',function(context,options){
+    return !!Meteor.userId();
+});
+
 UI.registerHelper('limitText', function (context, options) {
     if (context && context.length > 40) {
         return context.substring(0, 40) + "...";
     }
-    else {
-        return context;
-    }
+     return context;
 })
 
 UI.registerHelper("formatDate", function (context, options) {

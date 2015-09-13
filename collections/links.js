@@ -5,6 +5,12 @@
 
 Links = new Mongo.Collection("links");
 
+// Extended configuration
+Links.initEasySearch(['title', 'body'], {
+    'limit' : 20,
+    'use' : 'mongo-db'
+});
+
 LinksSchema = new SimpleSchema({
     title: {
         type: String,
