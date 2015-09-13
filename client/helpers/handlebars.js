@@ -15,8 +15,8 @@ UI.registerHelper('isUser',function(context,options){
 });
 
 UI.registerHelper('limitText', function (context, options) {
-    if (context && context.length > 40) {
-        return context.substring(0, 40) + "...";
+    if (context && context.length > 38) {
+        return context.substring(0, 38) + "...";
     }
      return context;
 })

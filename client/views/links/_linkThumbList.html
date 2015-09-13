@@ -8,15 +8,15 @@
 </template>
 <template name="linkThumb">
 	<div class="col-md-4">
-			<div class="thumbnail" style="{{setColorAlpha color}}" data-bind="click: viewDetail">
-				<div class="caption">
-					<h4 style="margin-top:0;font-weight:bold;" title="{{title}}">{{limitText title}}</h4>
-					<p><span class="glyphicon glyphicon-tag"></span>{{{displayTags tags}}}</p>
-					<p><span class="glyphicon glyphicon-time"></span>{{formatDate createdAt}}</p>
-					<!--<p style="margin:0">
+		<div class="thumbnail" style="{{setColorAlpha color}}" data-bind="click: viewDetail">
+			<div class="caption">
+				<h4 style="margin-top:0;font-weight:bold;" title="{{title}}">{{ title}}</h4>
+				<p><span class="glyphicon glyphicon-tag"></span>{{{displayTags tags}}}</p>
+				<p><span class="glyphicon glyphicon-time"></span>{{formatDate createdAt}}</p>
+				<!--<p style="margin:0">
 						<div class="rateit" data-rateit-value="{{rating}}" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
 					</p>-->
-				</div>
 			</div>
 		</div>
+	</div>
 </template>

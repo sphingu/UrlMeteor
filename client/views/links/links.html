@@ -1,7 +1,9 @@
 <template name="links">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">Links</h3>
+            <h3 class="panel-title">Links
+                (<span>{{links.length}}</span>)
+            </h3>
             <div style="float:right;margin-top:-12px;">
                 <a href="{{pathFor 'AddLink'}}" class="btn btn-primary" title="Add link">
                     <span class="glyphicon glyphicon-plus"></span>

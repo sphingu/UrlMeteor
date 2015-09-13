@@ -16,7 +16,9 @@
 					</div>
 				</div>
 			</div>
-			{{/esEach}} {{> esLoadMoreButton index="links"}} {{#ifEsHasNoResults index="links"}}
+			{{/esEach}} {{> esLoadMoreButton index="links"}} {{#ifEsInputIsEmpty index="links"}}
+			<div>Search for links</div>
+			{{/ifEsInputIsEmpty}} {{#ifEsHasNoResults index="links"}}
 			<div class="no-results">No results found!</div>
 			{{/ifEsHasNoResults}} {{#ifEsIsSearching index="links"}}
 			<div>Loading...</div>

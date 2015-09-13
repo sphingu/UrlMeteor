@@ -1,6 +1,6 @@
 Template.links.viewmodel({
   links: function () {
-    return Links.find({}, { sort: { createdAt: -1 } }).map(function (link, index) {
+    return Links.find({}, { sort: { updatedAt: -1, createdAt: -1 } }).map(function (link, index) {
       link.index = index;
       return link;
     });
