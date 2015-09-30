@@ -22,7 +22,7 @@ Router.map(function () {
   this.route('EditLink', {
     template: 'editLink',
     path: '/EditLink/:id',
-    waitOn: subscribeLinkOnwait,
+    waitOn: subscribeLinkDetailOnwait,
     notFoundTemplate: 'home',
     data: function () {
       return Links.findOne({ _id: this.params.id });
@@ -30,7 +30,7 @@ Router.map(function () {
   });
   this.route('LinkDetail', {
     path: '/link/:id',
-    waitOn: subscribeLinkOnwait,
+    waitOn: subscribeLinkDetailOnwait,
     notFoundTemplate: 'home',
     data: function () {
       return Links.findOne({ _id: this.params.id });
@@ -47,8 +47,14 @@ function subscribeLinkOnwait() {
     Meteor.subscribe('links')
   ];
 }
+function subscribeLinkDetailOnwait() {
+  return [
+    Meteor.subscribe('linksWithDetail')
+  ];
+}
 Router.plugin('auth', {
   except: [
+    'backup',
     'enroll',
     'forgotPassword',
     'home',
