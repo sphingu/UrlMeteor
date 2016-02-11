@@ -1,11 +1,8 @@
-/* ---------------------------------------------------- +/
+/*    ## Publications ##
+         ------------
+All publications-related code.
 
-## Publications ##
-
-All publications-related code. 
-
-/+ ---------------------------------------------------- */
-/* global Meteor */
+*/
 
 Meteor.publish('links', function () {
   if (this.userId) {

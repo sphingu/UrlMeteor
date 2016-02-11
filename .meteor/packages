@@ -32,3 +32,8 @@ service-configuration
 dburles:collection-helpers
 manuel:viewmodel-explorer
 matteodem:easy-search
+kadira:flow-router
+kadira:react-layout
+react
+juliancwirko:s-alert
+juliancwirko:s-alert-flip

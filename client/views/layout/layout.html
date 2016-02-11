@@ -1,0 +1,41 @@
+<template name="layout">
+    <header>
+        {{> header}}
+    </header>
+    <section id="content" class="main container" style="margin-top: 65+'px'">
+        {{> yield}}
+    </section>
+    <footer>
+        {{> footer}}
+    </footer>
+    <script type="text/javascript">
+        toastr.options = {
+        "positionClass": "toast-bottom-right",
+        };
+
+        $(document).off('.data-api');
+
+    	$(window).scroll(function(){
+    		var scrollTop = $(window).scrollTop();
+    		if(scrollTop != 0)
+    			$('nav').stop().animate({'opacity':'0.2'},400);
+    		else
+    			$('nav').stop().animate({'opacity':'1'},400);
+    	});
+
+    	$('nav').hover(
+    		function (e) {
+    			var scrollTop = $(window).scrollTop();
+    			if(scrollTop != 0){
+    				$('nav').stop().animate({'opacity':'1'},400);
+    			}
+    		},
+    		function (e) {
+    			var scrollTop = $(window).scrollTop();
+    			if(scrollTop != 0){
+    				$('nav').stop().animate({'opacity':'0.2'},400);
+    			}
+    		}
+    	);
+    </script>
+</template>
